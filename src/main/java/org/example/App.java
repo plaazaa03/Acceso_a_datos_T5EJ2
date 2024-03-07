@@ -69,12 +69,12 @@ public class App
                     break;
                 case "S":
                     System.out.println("Saliendo del programa");
-                    scanner.close();
                     break;
                 default:
                     System.out.print("Opcion no valida. Debes de introducir una opcion valida");
             }
-        }while (opcion != "S");
+        }while (opcion.equals("S"));
+        scanner.close();
     }
 
     private static void insertarDepartamento() {
@@ -100,6 +100,7 @@ public class App
     }
 
     private static void actualizarDepartamento() {
+
 
     }
 
@@ -129,6 +130,7 @@ public class App
             document.append("Comision", comisionEmpleado);
         }
 
+        collectionEmpleados.insertOne(document);
     }
 
     private static void mostrarEmpleado() {
